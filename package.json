@@ -1,0 +1,19 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "build": "npm run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0",
+        "laravel-mix": "^6.0",
+        "laravel-mix-purgecss": "^6.0.0"
+    },
+    "dependencies": {
+    }
+}

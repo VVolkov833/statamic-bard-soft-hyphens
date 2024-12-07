@@ -1,0 +1,39 @@
+{
+    "name": "kabocom/soft-hyphens",
+    "autoload": {
+        "psr-4": {
+            "Kabocom\\SoftHyphens\\": "src"
+        }
+    },
+    "require": {
+        "statamic/cms": "^5.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true
+        }
+    },
+    "type": "statamic-addon",
+    "extra": {
+        "statamic": {
+            "name": "Statamic Bard Soft Hyphens",
+            "description": "Add Soft Hyphens button to the Bard editor to wrap long words manually"
+        },
+        "laravel": {
+            "providers": [
+                "Kabocom\\SoftHyphens\\ServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "license": [
+        "MIT"
+    ],
+    "keywords": [
+        "statamic",
+        "bard",
+        "soft hyphens"
+    ],
+    "description": "Statamic Bard Soft Hyphens"
+}
