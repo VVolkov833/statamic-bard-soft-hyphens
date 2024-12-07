@@ -11,8 +11,7 @@
     },
     "devDependencies": {
         "cross-env": "^7.0",
-        "laravel-mix": "^6.0",
-        "laravel-mix-purgecss": "^6.0.0"
+        "laravel-mix": "^6.0"
     },
     "dependencies": {
     }
