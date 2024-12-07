@@ -15,14 +15,17 @@ class ServiceProvider extends AddonServiceProvider
     {
         parent::boot();
 
-        Bard::hook('process', function ($payload, $next) {
-            $payload = ServiceProvider::replaceSoftHyphens($payload, '↵', '­'); // Modify before saving
-            return $next($payload);
-        });
+        // Use resolving to attach hooks to the current Bard implementation
+        $this->app->resolving(\Statamic\Fieldtypes\Bard::class, function ($bard) {
+            $bard::hook('process', function ($payload, $next) {
+                $payload = ServiceProvider::replaceSoftHyphens($payload, '↵', '­');
+                return $next($payload);
+            });
 
-        Bard::hook('pre-process', function ($payload, $next) {
-            $payload = ServiceProvider::replaceSoftHyphens($payload, '­', '↵'); // Modify before rendering in editor
-            return $next($payload);
+            $bard::hook('pre-process', function ($payload, $next) {
+                $payload = ServiceProvider::replaceSoftHyphens($payload, '­', '↵');
+                return $next($payload);
+            });
         });
     }
 
